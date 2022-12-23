@@ -1,5 +1,6 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
+import Titulo from "../Titulo/Titulo";
 
 import "./NavBar.css"
 
@@ -7,20 +8,24 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <ul className="navbar__lista">
-        <li>
-          <a href="#">Productos</a>
+      <a href="#" className="navbar-brand">
+        <Titulo titulo="Lucio Commerce" />
+      </a>
+
+      <ul className="nav" style={{ marginRight: "auto" }}>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Productos</a>
         </li>
-        <li>
-          <a href="#">Nosotros</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Nosotros</a>
         </li>
-        <li>
-          <a href="#">Contacto</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#">Contacto</a>
         </li>
       </ul>
 
-      <a href="#"><CartWidget/></a>
-    </nav>
+      <a href="#"><CartWidget /></a>
+    </nav >
   )
 }
 

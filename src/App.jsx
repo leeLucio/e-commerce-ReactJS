@@ -9,10 +9,6 @@ function App() {
 
   return (
     <div className="App">
-      <a href="#" className="navbar__brand">
-        <Titulo titulo="Lucio Commerce" />
-      </a>
-      
       <NavBar />
       <ItemListContainer greeting="Hamburguesa con queso" />
     </div>

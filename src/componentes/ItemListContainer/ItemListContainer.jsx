@@ -3,7 +3,7 @@ import React from 'react'
 const ItemListContainer = ({ greeting }) => {
 
 	return (
-		<p>Hola! Este es el mensaje ingresado: {greeting}</p>
+		<p>Hola! Este es el greeting: {greeting}</p>
 	)
 }
 
