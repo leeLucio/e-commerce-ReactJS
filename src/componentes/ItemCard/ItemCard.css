@@ -5,7 +5,9 @@ div.card{
 }
 
 .card-image {
-	height: 50%;
+	height: 70%;
 	object-fit: contain;
+
+	border-bottom: 2px solid lightgrey;
 }
 

@@ -1,0 +1,21 @@
+.item-detalle{
+	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+.item-detalle img{
+	max-width: 100%;
+	width: 500px
+}
+
+.item-body{
+	max-width: 500px;
+}
+
+.item-body > *{
+	margin: 25px
+}

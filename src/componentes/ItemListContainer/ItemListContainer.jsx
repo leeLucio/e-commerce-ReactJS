@@ -6,7 +6,7 @@ import { gFetch } from "../../utils/gFetch"
 import ItemList from '../ItemList/ItemList'
 // import ItemList from '../ItemList/ItemList'
 
-const ItemListContainer = ({ greeting }) => {
+const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(false)
   const { id } = useParams()
