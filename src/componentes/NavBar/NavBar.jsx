@@ -1,6 +1,7 @@
 import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import Titulo from "../Titulo/Titulo";
+import { NavLink } from "react-router-dom";
 
 import "./NavBar.css"
 
@@ -8,23 +9,23 @@ const NavBar = () => {
 
   return (
     <nav className="navbar">
-      <a href="#" className="navbar-brand">
+      <NavLink to="/" className="navbar-brand">
         <Titulo titulo="Lucio Commerce" />
-      </a>
+      </NavLink>
 
-      <ul className="nav" style={{ marginRight: "auto" }}>
+      <ul className="nav">
         <li className="nav-item">
-          <a className="nav-link" href="#">Productos</a>
+          <NavLink className="nav-link" to="category/sillas">Sillas</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Nosotros</a>
+          <NavLink className="nav-link" to="category/escritorios">Escritorios</NavLink>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Contacto</a>
+          <NavLink className="nav-link" to="category/sofas">Sofas</NavLink>
         </li>
       </ul>
 
-      <a href="#"><CartWidget /></a>
+      <NavLink to="/carrito"><CartWidget /></NavLink>
     </nav >
   )
 }
