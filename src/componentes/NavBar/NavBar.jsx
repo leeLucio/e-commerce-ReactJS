@@ -18,7 +18,7 @@ const NavBar = () => {
           <NavLink className="nav-link" to="category/sillas">Sillas</NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="category/escritorios">Escritorios</NavLink>
+          <NavLink className="nav-link" to="category/mesas">Mesas</NavLink>
         </li>
         <li className="nav-item">
           <NavLink className="nav-link" to="category/sofas">Sofas</NavLink>
