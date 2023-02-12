@@ -20,11 +20,10 @@ const app = initializeApp(firebaseConfig);
 
 const database = getFirestore(app)
 
-export const getItems = async (id) => {
+export const getItems = async () => {
 	const productsCollectionRef = collection(database, "productos")
 
 	const snapshot = await getDocs(productsCollectionRef)
-	console.log(snapshot)
 	return snapshot.docs.map(doc => {
 		return { ...doc.data(), id: doc.id }
 	})
