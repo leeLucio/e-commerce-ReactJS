@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react'
+import React, { createContext, useContext, useState, useEffect } from 'react'
 
 const CartContext = createContext([])
 
@@ -32,12 +32,35 @@ export const CartContextProvider = ({ children }) => {
 		return carrito.reduce((total, prod) => total + prod.cantidad * prod.price, 0)
 	}
 
-	const eliminarItem = () => {
+	const eliminarItemCarrito = (prod, cantidad) => {
+		const index = obtenerIndiceCarrito(prod)
+
+		if (prod.cantidad <= cantidad) {
+			carrito.splice(index, 1)
+			setCarrito([...carrito])
+		} else {
+			carrito[index].cantidad -= cantidad
+			setCarrito([...carrito])
+		}
 
 	}
 
+	const aumentarItemCarrito = (prod, cantidad) => {
+		const index = obtenerIndiceCarrito(prod)
+		carrito[index].cantidad += cantidad
+		setCarrito([...(carrito)])
+	}
+
 	return (
-		<CartContext.Provider value={{ carrito, agregarCarrito, vaciarCarrito, obtenerCantTotal, obtenerPrecioTotal }}>
+		<CartContext.Provider value={{
+			carrito,
+			agregarCarrito,
+			vaciarCarrito,
+			obtenerCantTotal,
+			obtenerPrecioTotal,
+			eliminarItemCarrito,
+			aumentarItemCarrito
+		}}>
 			{children}
 		</CartContext.Provider>
 	)
