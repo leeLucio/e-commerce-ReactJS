@@ -1,13 +1,13 @@
-import React from 'react'
 import { useCartContext } from '../../context/CartContext'
 import cartIcon from './../../assets/icono-carrito.png'
+import "./CartWidget.css"
 
 function CartWidget() {
   const { obtenerCantTotal } = useCartContext()
 
   return (
-    <div className='d-flex align-items-center'>
-      <p>{obtenerCantTotal()}</p>
+    <div className='cartwidget d-flex align-items-center'>
+      <p className='cantidad'>{obtenerCantTotal()}</p>
       <img src={cartIcon} alt="carrito" />
     </div>
   )

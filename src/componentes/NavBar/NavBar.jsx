@@ -1,4 +1,3 @@
-import React from "react";
 import CartWidget from "../CartWidget/CartWidget";
 import Titulo from "../Titulo/Titulo";
 import { NavLink } from "react-router-dom";
@@ -8,7 +7,7 @@ import "./NavBar.css"
 const NavBar = () => {
 
   return (
-    <nav className="navbar">
+    <nav className="navbar navbar-dark">
       <NavLink to="/" className="navbar-brand">
         <Titulo titulo="Lucio Commerce" />
       </NavLink>
@@ -25,7 +24,7 @@ const NavBar = () => {
         </li>
       </ul>
 
-      <NavLink to="/carrito"><CartWidget /></NavLink>
+      <NavLink className="text-decoration-none" to="/cart"><CartWidget /></NavLink>
     </nav >
   )
 }

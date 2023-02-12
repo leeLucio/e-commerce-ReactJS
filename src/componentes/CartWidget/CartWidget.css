@@ -1,0 +1,12 @@
+.cartwidget{
+	padding: 0px 5px;
+	background-color: lightblue;
+	border-radius: 2rem;
+}
+
+.cartwidget .cantidad{
+	margin: 5px;
+
+	font-size: 1.25rem;
+	font-weight: 700;
+}

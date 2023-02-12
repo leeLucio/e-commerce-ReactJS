@@ -1,4 +1,4 @@
-div.card{
+div.card {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -10,4 +10,3 @@ div.card{
 
 	border-bottom: 2px solid lightgrey;
 }
-
