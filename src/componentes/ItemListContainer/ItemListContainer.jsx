@@ -1,25 +1,36 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import LoadingWidget from "../LoadingWidget/LoadingWidget"
-import { gFetch } from "../../utils/gFetch"
+import { getItems, getItemsByCategory } from "../../utils/firebase"
 import ItemList from '../ItemList/ItemList'
-// import ItemList from '../ItemList/ItemList'
+
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(false)
-  const { id } = useParams()
+  const { categoryId } = useParams()
 
   useEffect(() => {
     setLoading(true)
-    gFetch()
-      .then(response => {
-        setProductos(id ? response.filter(prods => prods.category === id) : response)
-      })
-      .catch(err => console.error(err))
-      .finally(() => setLoading(false))
-  }, [id])
+
+    if (categoryId) {
+      getItemsByCategory(categoryId)
+        .then(response => {
+          setProductos(response)
+        })
+        .catch(err => console.error(err))
+        .finally(() => setLoading(false))
+    }
+    else {
+      getItems()
+        .then(response => {
+          setProductos(response)
+        })
+        .catch(err => console.error(err))
+        .finally(() => setLoading(false))
+    }
+  }, [categoryId])
 
 
   return (
@@ -28,7 +39,7 @@ const ItemListContainer = () => {
         loading ?
           <LoadingWidget />
           :
-          <ItemList productos={productos}/>
+          <ItemList productos={productos} />
       }
     </div>
   )

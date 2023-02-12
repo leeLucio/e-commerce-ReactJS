@@ -10,7 +10,6 @@ import CartContainer from './componentes/CartContainer/CartContainer'
 const AppContext = createContext()
 
 function App() {
-
   return (
     <CartContextProvider>
       <BrowserRouter className="App">
@@ -18,7 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<ItemListContainer />} />
           <Route path="/item/:id" element={<ItemDetailContainer />} />
-          <Route path="/category/:id" element={<ItemListContainer />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer />} />
           <Route path='/carrito' element={<CartContainer />} />
           <Route path='*' element={<Navigate to="/" />} />
         </Routes>

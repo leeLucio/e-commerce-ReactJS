@@ -6,7 +6,11 @@ const CartContainer = () => {
 
 	return (
 		<div>
-			{carrito.map(prod => <div key={prod.id}>{prod.name}</div>)}
+			{carrito.map(prod =>
+				<div key={prod.id}>
+					<h3>{prod.name}</h3>
+					<h4>{prod.cantidad}</h4>
+				</div>)}
 
 			{carrito.length ?
 				<button className='btn btn-danger' onClick={vaciarCarrito}>Vaciar Carrito</button>

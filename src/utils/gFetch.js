@@ -44,7 +44,12 @@ const productos = [
 export const gFetch = (id) => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(id ? productos.find(prod => prod.id === id) : productos)
+      if(id){
+        const item = productos.find(prod => prod.id === id)
+        item ? resolve(item) : reject("Item no encontrado")
+      }
+      
+      resolve(productos)
     }, 1000)
   })
 }
