@@ -4,7 +4,7 @@ import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useCartContext } from '../../context/CartContext'
 import { updateItemStock } from "../../utils/firebase"
 
-const CartForm = ({ setearCarga }) => {
+const CartForm = ({ setearCarga, setearIdOrden }) => {
   const { carrito, obtenerPrecioTotal, vaciarCarrito } = useCartContext()
   const [dataForm, setDataForm] = useState({
     name: "",
@@ -37,11 +37,11 @@ const CartForm = ({ setearCarga }) => {
     const orderCollection = collection(db, "orders")
     addDoc(orderCollection, order)
       .then(({ id }) => {
-        console.log(id)
+        setearIdOrden(id)
         vaciarCarrito()
       })
       .catch(err => console.error(err))
-    .finally(() => setearCarga(false))
+      .finally(() => setearCarga(false))
 
     carrito.forEach(async (prod) => {
       updateItemStock(prod)
