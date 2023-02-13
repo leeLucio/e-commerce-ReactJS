@@ -7,10 +7,10 @@ import "./ItemDetail.css"
 const ItemDetail = ({ producto }) => {
   const [isAdded, setIsAdded] = useState(false)
 
-  const { carrito, agregarCarrito } = useCartContext()
+  const { agregarCarrito } = useCartContext()
 
   const onAdd = (cant) => {
-    agregarCarrito({ ...producto, cantidad: cant })
+    agregarCarrito({ ...producto, quantity: cant })
     setIsAdded(true)
   }
 
@@ -21,15 +21,19 @@ const ItemDetail = ({ producto }) => {
         <h2>{producto.name}</h2>
         <h4>Categoria: {producto.category}</h4>
         <h4>Precio: ${producto.price}</h4>
+        <h4>Stock: {producto.stock}</h4>
         <p>{producto.description}</p>
 
         {isAdded ?
           <>
-            <NavLink to={"/carrito"}><button className="btn btn-dark">Ir al Carrito</button></NavLink>
-           <NavLink to={"/"}><button className="btn btn-outline-success">Seguir Comprando</button></NavLink>
+            <NavLink to={"/cart"}><button className="btn btn-dark">Ir al Carrito</button></NavLink>
+            <NavLink to={"/"}><button className="btn btn-outline-success">Seguir Comprando</button></NavLink>
           </>
           :
-          <ItemCount onAdd={onAdd} />
+          producto.stock > 0 ?
+            <ItemCount onAdd={onAdd} stock={producto.stock} />
+            :
+            <h3>Sin Stock</h3>
         }
 
       </div>

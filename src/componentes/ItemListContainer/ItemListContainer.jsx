@@ -7,12 +7,11 @@ import ItemList from '../ItemList/ItemList'
 
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([])
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState()
   const { categoryId } = useParams()
 
   useEffect(() => {
     setLoading(true)
-
     if (categoryId) {
       getItemsByCategory(categoryId)
         .then(response => {
@@ -30,7 +29,6 @@ const ItemListContainer = () => {
         .finally(() => setLoading(false))
     }
   }, [categoryId])
-
 
   return (
     <div>
