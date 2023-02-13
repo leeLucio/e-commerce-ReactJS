@@ -1,0 +1,34 @@
+.cart {
+	display: grid;
+	grid-template-rows: 200px;
+	gap: 20px;
+}
+
+.carritoCard {
+	display: grid;
+	grid-template-columns: 1fr 2fr 1fr 1fr 30px;
+	gap: 20px;
+	grid-row-gap: 20px;
+	align-items: center;
+}
+
+.carritoCard img {
+	height: 200px;
+	width: 100%;
+	object-fit: scale-down;
+}
+
+.cantidad {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.eliminar {
+	cursor: pointer;
+}
+
+.formulario {
+	margin: 50px
+}

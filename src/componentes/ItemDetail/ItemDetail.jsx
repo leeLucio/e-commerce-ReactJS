@@ -33,7 +33,7 @@ const ItemDetail = ({ producto }) => {
           producto.stock > 0 ?
             <ItemCount onAdd={onAdd} stock={producto.stock} />
             :
-            <h3>Sin Stock</h3>
+            <h3 style={{ color: "red" }}>Sin Stock</h3>
         }
 
       </div>
