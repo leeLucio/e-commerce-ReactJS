@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import "./CartForm.css"
 import { addDoc, collection, getFirestore } from "firebase/firestore"
 import { useCartContext } from '../../context/CartContext'
 import { updateItemStock } from "../../utils/firebase"
+import "./CartForm.css"
 
 const CartForm = ({ setearCarga, setearIdOrden }) => {
   const { carrito, obtenerPrecioTotal, vaciarCarrito } = useCartContext()

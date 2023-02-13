@@ -1,5 +1,14 @@
+.formulario {
+	margin: 50px
+}
+
 form .error {
 	border-color: red;
 	border-style: solid;
 	outline-color: red;
+}
+
+form input{
+	min-width: 300px;
+	margin: 3px;
 }

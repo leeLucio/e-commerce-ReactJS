@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { useCartContext } from '../../context/CartContext'
 import LoadingWidget from "../LoadingWidget/LoadingWidget"
 import { useState } from 'react'
-import Cart from '../CartList/Cart'
+import Cart from '../Cart/Cart'
 import CartForm from '../CartForm/CartForm'
 import Checkout from '../Checkout/Checkout'
 
