@@ -7,7 +7,7 @@ Este es un proyecto que busca crear una aplicación de un e-commerce basandose e
 Tiene como objetivo permitir al usuario navegar por el catálogo de productos traidos de una base de datos y por las categorias de las mismas. Debe ser capaz de ver el detalle de cada producto y agregarlos al carrito según su disponibilidad y generar una orden de compra al finalizar, actualizando los datos de la base de datos.
 
 ## Deploy del proyecto
-[Link a app en netlify](luciocommerce.netlify.app)
+[Link a app en netlify](https://luciocommerce.netlify.app/)
 
 ## Dependencias
 
